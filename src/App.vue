@@ -1,22 +1,22 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <p>{{greeting()}}</p>
+    <ninjas></ninjas>
   </div>
 </template>
 
 <script>
 
+import ninjas from './assets/NetNinjas.vue'
+
+
 export default {
+    components:{
+        'ninjas': ninjas
+    },
   data(){
     return{
-      title: 'this is vue CLI'
-    }
-  },
-  methods:{
-    greeting(){
-      return 'hay cli boy'
-      console.log('this is it')
+      title: 'Ninja app'
     }
   }
 }
