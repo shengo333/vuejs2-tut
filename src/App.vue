@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
-    <Ninjas :ninjas="bekas" />
-    <Footer />
+    <Header :title="title"/>
+    <Ninjas :ninjas="ninjas" />
+    <Footer :title="title"/>
     
   </div>
 </template>
@@ -22,14 +22,15 @@ export default {
     },
   data(){
     return{
-        bekas: [
+        ninjas: [
           {name: 'Ryu', speciality: 'Vue Components', show: false},
           {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
           {name: 'Hitoshi', speciality: 'Click Events', show: false},
           {name: 'Tango', speciality: 'Conditionals', show: false},
           {name: 'Kami', speciality: 'Webpack', show: false},
           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-        ]
+        ],
+        title: "Irakli"
     }
   }
 }
