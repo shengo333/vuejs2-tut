@@ -6,11 +6,6 @@
 
 <script>
 export default {
-    data(){
-        return{
-            title: 'Vue Ninjas'
-        }
-    },
     props:{
         title: {
             type: String
@@ -19,11 +14,9 @@ export default {
 
     methods: {
         changetitle (){
-            this.title = "vue wizards"
+            this.$emit('changeTitle', 'vue wizards')
         }
     }
-
-
 }
 </script>
 

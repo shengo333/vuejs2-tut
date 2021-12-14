@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :title="title"/>
+    <Header :title="title" @changeTitle="updateTitle($event)"/>
     <Ninjas :ninjas="ninjas" />
     <Footer :title="title"/>
     
@@ -31,6 +31,11 @@ export default {
           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
         ],
         title: "Irakli"
+    }
+  },
+  methods:{
+    updateTitle(modifidetitle){
+      this.title = modifidetitle
     }
   }
 }
