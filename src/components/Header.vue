@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
     props:{
         title: {
@@ -14,8 +15,9 @@ export default {
 
     methods: {
         changetitle (){
-            this.$emit('changeTitle', 'vue wizards')
-        }
+          this.$emit('changeTitle', 'vue wizards')
+
+        } 
     }
 }
 </script>

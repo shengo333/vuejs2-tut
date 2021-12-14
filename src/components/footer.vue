@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
     props:{
         title: {
@@ -15,7 +16,7 @@ export default {
         return{
             copyright: 'Ninja copirights '
         }
-    },
+    }
 }
 </script>
 

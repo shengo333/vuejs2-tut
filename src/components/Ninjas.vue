@@ -28,6 +28,10 @@ export default {
         deletNinja(){
             this.ninjas.pop()
         }
+    },
+    beforeCreate(){
+        alert('beforeCreat')
+        console.log('before created')
     }
 }
 </script>
