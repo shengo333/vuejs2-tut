@@ -1,22 +1,28 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <ninjas></ninjas>
+    <Header />
+    <Ninjas />
+    <Footer />
+    
   </div>
 </template>
 
 <script>
 
-import ninjas from './assets/NetNinjas.vue'
+import Header from './components/Header.vue'
+import Footer from './components/footer.vue'
+import Ninjas from './components/Ninjas.vue'
 
 
 export default {
     components:{
-        'ninjas': ninjas
+         Header,
+         Footer,
+         Ninjas,
     },
   data(){
     return{
-      title: 'Ninja app'
+
     }
   }
 }
