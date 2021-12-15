@@ -1,50 +1,52 @@
 <template>
-  <div>
-    <Header :title="title" @changeTitle="updateTitle($event)"/>
-    <Ninjas :ninjas="ninjas" />
-    <Footer :title="title"/>
+  
+  <formHelper>
+    <template v-slot:title> <h3> {{title}}</h3> </template>
     
-  </div>
+    <template v-slot:form-header>
+      <h3>This is the title of the form </h3>
+      <p>information about the slot</p>
+    </template>
+
+    <template v-slot:form-fields>
+      <input type="text" placeholder="name" required>
+      <input type="password" placeholder="password" required>
+    </template>
+
+    
+    <template v-slot:form-controls>
+      <button @click="handleSubmit">Submit</button>
+    </template>
+
+  </formHelper>
 </template>
 
 <script>
 
-import Header from './components/Header.vue'
-import Footer from './components/footer.vue'
-import Ninjas from './components/Ninjas.vue'
+import formHelper from './components/formHelper.vue'
+
 
 
 export default {
     components:{
-         Header,
-         Footer,
-         Ninjas,
+         formHelper,
+        
     },
   data(){
     return{
-        ninjas: [
-          {name: 'Ryu', speciality: 'Vue Components', show: false},
-          {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-          {name: 'Hitoshi', speciality: 'Click Events', show: false},
-          {name: 'Tango', speciality: 'Conditionals', show: false},
-          {name: 'Kami', speciality: 'Webpack', show: false},
-          {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-        ],
-        title: "Irakli"
+      title: 'i am dynamic slot title'
     }
   },
   methods:{
-    updateTitle(modifidetitle){
-      this.title = modifidetitle
-    }
+
   }
 }
 </script>
 
 <style scoped>
-h1{
-  color: purple
-}
 
+h3{
+  color: red
+}
 
 </style>
