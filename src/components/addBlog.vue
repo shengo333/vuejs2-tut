@@ -16,10 +16,11 @@
                 <label for="checkbox" > Mario</label>
                 <input type="checkbox" value="Cheese" id="Cheese" v-model="blog.categories">
                 <label for="checkbox" > Cheese</label>
-
- 
-
             </div>
+            <select v-model="blog.author">
+                <option v-for="author in authors" :key="author">{{author}}</option>
+            </select>
+            
         </form>
         <div id="preview">
             <h3>Preview Blog</h3>
@@ -30,6 +31,7 @@
             <ul>
                 <li v-for="categorie in blog.categories" :key="categorie">{{categorie}}</li>
             </ul>
+            <p>Author is : {{blog.author}}</p>
         </div>
     </div>
 
@@ -48,9 +50,10 @@ export default {
             {
             title: "",
             content: "",
-            categories: []
-            }
-
+            categories: [],
+            author: ""
+            },
+        authors: ['rotfus patric', 'king of hill', 'john fruasciante']
     }
   },
   methods:{
